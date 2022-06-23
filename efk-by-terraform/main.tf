@@ -194,7 +194,8 @@ resource "null_resource" "elasticsearch_remote"{
       "sudo mv /home/ubuntu/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml",
       "sudo mv /home/ubuntu/kibana.yml /etc/kibana/kibana.yml",
       "sudo systemctl restart elasticsearch.service",
-      "sudo systemctl restart kibana.service"
+      "sudo systemctl restart kibana.service",
+      "sudo systemctl stop td-agent.service"
     ]
   }
 }
