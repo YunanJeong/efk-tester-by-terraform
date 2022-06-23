@@ -16,7 +16,7 @@
 
 ## 버전
 - Terraform: v1.2.1 on linux_amd64
-- fluentd: td-agent
+- fluentd: td-agent 4.3.0 (fluentd 1.14.3)
 - elasticsearch: 8.1.1
 - kibana: 8.1.1
 

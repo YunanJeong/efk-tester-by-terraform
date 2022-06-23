@@ -1,0 +1,19 @@
+# key pair
+key_pair_name = "my_keypair"
+private_key_path = "/home/ubuntu/.ssh/my_keypair.pem"
+tags = {
+    Owner = "kkkkkkkkk@mygmail.com"
+    Service = "service_tag"
+}
+my_ip_list = ["x.x.x.x/32", "x.x.x.x/32"]  # yunan_internet_pc, yunan_home
+######################################################################
+# Set Up fluentd
+######################################################################
+ami_fluentd = "ami-xxxxxxxxxxxxxx"  # yunan-testbed-fluentd
+tag_name_fluentd = "my-fluentd-by-terraform"
+
+######################################################################
+# Set Up elasticsearch
+######################################################################
+ami_elasticsearch = "ami-xxxxxxxxxxxxxx"  # yunan-testbed-elasticsearch2
+tag_name_elasticsearch = "my-elasearch-by-terraform"
