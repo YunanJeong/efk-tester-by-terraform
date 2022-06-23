@@ -1,5 +1,5 @@
 # efk-tester-by-terraform
- This repository quickly & automatically creates an Elastic(ELK, EFK) stack testbed in aws with Terraform.
+ This repository quickly & automatically creates an Elastic(ELK, EFK) stack testbed on AWS with Terraform IaC.
 
 ## Motivation
     - Elastic(ELK), EFK 스택의 모의 테스트 환경을 빠르게 구축하고 싶다.
