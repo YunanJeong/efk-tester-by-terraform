@@ -5,8 +5,8 @@
     - Elastic(ELk), EFK 스택을 간편하게 셋업하여 테스트 환경을 구성할 수 있다.
     - ami를 미리 구성해놓아도, ip 설정 등이 매우 번거롭다.
 
-## 디렉토리
-    [efk-by-terraform/](https://github.com/YunanJeong/efk-tester-by-terraform/tree/main/efk-by-terraform)
+## 디렉토리 별 구성 및 설명
+[efk-by-terraform/](https://github.com/YunanJeong/efk-tester-by-terraform/tree/main/efk-by-terraform)
 
 ## 요구사항
 - awscli가 설치 및 세팅되어있어야 함.
