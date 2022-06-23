@@ -13,7 +13,6 @@
     - elasticsearch+kibana가 자동 실행되는 ami 1개
 
 
-
 ## 버전
 - Terraform: v1.2.1 on linux_amd64
 - fluentd: td-agent 4.3.0 (fluentd 1.14.3)

@@ -6,8 +6,7 @@
     - ami를 미리 구성해놓아도, ip 설정 등이 매우 번거롭다.
 
 ## 디렉토리
-    efk-by-terraform/       #
-
+    [efk-by-terraform/](https://github.com/YunanJeong/efk-tester-by-terraform/tree/main/efk-by-terraform)
 
 ## 요구사항
 - awscli가 설치 및 세팅되어있어야 함.
