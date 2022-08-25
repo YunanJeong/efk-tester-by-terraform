@@ -203,10 +203,12 @@ resource "null_resource" "elasticsearch_remote"{
       "sudo apt install -y ./*.deb",
       "sudo mv /home/ubuntu/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml",
       "sudo mv /home/ubuntu/kibana.yml /etc/kibana/kibana.yml",
+
+      # 가용램의 절반으로 elasticsearch 힙메모리 설정
       "sudo cp /etc/elasticsearch/jvm.options /etc/elasitcsearch/jvm.options.d/",
       "RAM=$(echo $(free --giga|grep Mem) | cut -f2 -d' ')   &&   HALF_RAM=`echo $((RAM/2))`",
-      "echo '-Xms'$HALF_RAM'g' >> /etc/elasticsearch/jvm.options.d/jvm.options",
-      "echo '-Xmx'$HALF_RAM'g' >> /etc/elasticsearch/jvm.options.d/jvm.options",
+      "sudo sh -c \"echo '-Xms'$HALF_RAM'g''\n''-Xmx'$HALF_RAM'g' >> /etc/elasticsearch/jvm.options.d/jvm.options\" ",
+
       "sudo systemctl deamon-reload",
       "sudo systemctl enable elasticsearch.service && sudo systemctl start elasticsearch.service",
       "sudo systemctl enable elasticsearch.service && sudo systemctl start kibana.service",
