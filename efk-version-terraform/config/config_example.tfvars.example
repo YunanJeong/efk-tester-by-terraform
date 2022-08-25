@@ -1,0 +1,25 @@
+# key pair
+key_pair_name = "my_keypair"
+private_key_path = "/home/ubuntu/.ssh/my_keypair.pem"
+tags = {
+    Owner = "kkkkkkkkk@mygmail.com"
+    Service = "service_tag"
+}
+my_ip_list = ["x.x.x.x/32", "x.x.x.x/32"]  # yunan_internet_pc, yunan_home
+######################################################################
+# Set Up fluentd
+######################################################################
+ami_fluentd = "ami-063454de5fe8eba79"  # ubuntu 22 LTS
+instance_type_fluentd = "t3.micro"
+tag_name_fluentd = "yunan-fluentd-by-terraform"
+version_fluentd = "https://s3.amazonaws.com/packages.treasuredata.com/4/ubuntu/jammy/pool/contrib/t/td-agent/td-agent_4.4.1-1_amd64.deb" # for ubuntu 22(Jammy)
+
+
+######################################################################
+# Set Up elasticsearch
+######################################################################
+ami_elasticsearch = "ami-063454de5fe8eba79"  # ubuntu 22 LTS
+instance_type_elasticsearch = "m5.large"
+tag_name_elasticsearch = "yunan-elasearch-by-terraform"
+version_elasitcsearch = "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.4.0-amd64.deb"
+version_kibana = "https://artifacts.elastic.co/downloads/kibana/kibana-8.4.0-amd64.deb"
