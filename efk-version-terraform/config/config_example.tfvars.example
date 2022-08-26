@@ -13,7 +13,7 @@ ami_fluentd = "ami-063454de5fe8eba79"  # ubuntu 22 LTS
 instance_type_fluentd = "t3.micro"
 tag_name_fluentd = "yunan-fluentd-by-terraform"
 version_fluentd = "https://s3.amazonaws.com/packages.treasuredata.com/4/ubuntu/jammy/pool/contrib/t/td-agent/td-agent_4.4.1-1_amd64.deb" # for ubuntu 22(Jammy)
-
+version_num_fluentd = "4.4.1-1"
 
 ######################################################################
 # Set Up elasticsearch

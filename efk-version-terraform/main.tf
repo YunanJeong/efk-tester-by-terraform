@@ -160,11 +160,27 @@ resource "null_resource" "fluentd_remote"{
   provisioner "remote-exec" {
     inline = [
       "cloud-init status --wait", # cloud-init이 끝날 떄 까지 기다린다. 에러 예방 차원에서 항상 써준다.
+
+      # td-agent 셋업
       "wget ${var.version_fluentd}",
       "sudo apt install -y ./*.deb",
       "sudo mv /home/ubuntu/td-agent.conf /etc/td-agent/td-agent.conf",
-      "sudo systemctl deamon-reload",
-      "sudo systemctl enable td-agent.service && sudo systemctl start td-agent.service"
+
+      # td-agent filebeat 플러그인 설치
+      "wget https://rubygems.org/downloads/fluent-plugin-beats-1.1.0.gem",
+      "sudo td-agent-gem install ./*.gem",
+
+      # 실행(td-agent는 마지막에 restart 해주는게 안정적이다.)
+      "sudo systemctl daemon-reload",
+      "sudo systemctl enable td-agent.service && sudo systemctl restart td-agent.service",
+
+      # td-agent dependency deb설치파일 다운로드
+        # 인터넷 환경에선 td-agent 설치시 dependency가 자동설치되므로 필요없다.
+        # 비인터넷 환경 설치시, 인터넷 환경에서 dependency를 별도 다운로드해서 파일을 옮기면 된다.
+        # ubuntu/debian repository에 td-agent가 등록되어있지 않으므로, td-agent 설치 후 실행해야 한다.
+      "mkdir depend && cd depend",
+      "apt-cache depends -i td-agent=${var.version_num_fluentd} | awk '/Depends:/ {print $2}' | xargs apt-get download",
+      "cd",
     ]
   }
 }
@@ -205,13 +221,14 @@ resource "null_resource" "elasticsearch_remote"{
       "sudo mv /home/ubuntu/kibana.yml /etc/kibana/kibana.yml",
 
       # 가용램의 절반으로 elasticsearch 힙메모리 설정
-      "sudo cp /etc/elasticsearch/jvm.options /etc/elasitcsearch/jvm.options.d/",
+      "sudo cp /etc/elasticsearch/jvm.options /etc/elasticsearch/jvm.options.d/",
       "RAM=$(echo $(free --giga|grep Mem) | cut -f2 -d' ')   &&   HALF_RAM=`echo $((RAM/2))`",
       "sudo sh -c \"echo '-Xms'$HALF_RAM'g''\n''-Xmx'$HALF_RAM'g' >> /etc/elasticsearch/jvm.options.d/jvm.options\" ",
 
-      "sudo systemctl deamon-reload",
-      "sudo systemctl enable elasticsearch.service && sudo systemctl start elasticsearch.service",
-      "sudo systemctl enable elasticsearch.service && sudo systemctl start kibana.service",
+      "sudo systemctl daemon-reload",
+      "sudo systemctl enable elasticsearch.service kibana.service",
+      "sudo systemctl start elasticsearch.service kibana.service",
+      #"sudo systemctl restart elasticsearch.service kibana.service"
 
     ]
   }

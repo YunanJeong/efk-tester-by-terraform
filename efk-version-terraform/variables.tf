@@ -23,6 +23,7 @@ variable "my_ip_list"{
 ######################################################################
 variable "tag_name_fluentd"{}
 variable "version_fluentd"{}
+variable "version_num_fluentd"{}
 variable "ami_fluentd"{
   description = "ubuntu 22 LTS"
   default = "ami-063454de5fe8eba79"
