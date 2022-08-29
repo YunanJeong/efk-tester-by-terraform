@@ -176,7 +176,7 @@ resource "null_resource" "fluentd_remote"{
 
       # td-agent dependency deb설치파일 다운로드
         # 인터넷 환경에선 td-agent 설치시 dependency가 자동설치되므로 필요없다.
-        # 비인터넷 환경 설치시, 인터넷 환경에서 dependency를 별도 다운로드해서 파일을 옮기면 된다.
+        # 비인터넷 환경 설치시, 인터넷 환경에서 이와같이 dependency를 별도 다운로드해서 파일을 옮기면 된다.
         # ubuntu/debian repository에 td-agent가 등록되어있지 않으므로, td-agent 설치 후 실행해야 한다.
       "mkdir depend && cd depend",
       "apt-cache depends -i td-agent=${var.version_num_fluentd} | awk '/Depends:/ {print $2}' | xargs apt-get download",
@@ -228,8 +228,6 @@ resource "null_resource" "elasticsearch_remote"{
       "sudo systemctl daemon-reload",
       "sudo systemctl enable elasticsearch.service kibana.service",
       "sudo systemctl start elasticsearch.service kibana.service",
-      #"sudo systemctl restart elasticsearch.service kibana.service"
-
     ]
   }
 }
