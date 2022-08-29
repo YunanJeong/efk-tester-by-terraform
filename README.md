@@ -32,3 +32,4 @@
         - `--auto-approve`는 이를 생략시키는 옵션 (자동화할 때 쓸 필요성있음)
     - `$terraform destroy`
         - 현재경로의 테라폼 프로젝트로 실행중인 인프라 리소스를 모두 종료
+        - var-file 설정이 있으면, `$terraform destroy -var-file=."/{설정파일명}.tfvars"`
