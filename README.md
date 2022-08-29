@@ -7,8 +7,8 @@
     - Infrastructure as Code (IaC)로 테스트 환경을 기록해두고 싶다.
 
 ## 디렉토리 별 구성 및 설명
-- [efk-fast-tester/](https://github.com/YunanJeong/efk-tester-by-terraform/tree/main/efk-by-terraform)
-- [efk-testbed-version-install/](https://github.com/YunanJeong/efk-tester-by-terraform/tree/main/efk-version-terraform)
+- [efk-fast-tester/](https://github.com/YunanJeong/efk-tester-by-terraform/tree/main/efk-fast-tester-8.1)
+- [efk-testbed-version-install/](https://github.com/YunanJeong/efk-tester-by-terraform/tree/main/efk-testbed-version-install)
 
 ## 요구사항
 - awscli가 설치 및 세팅되어있어야 함.
