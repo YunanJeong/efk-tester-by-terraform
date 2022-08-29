@@ -3,7 +3,7 @@
 
 ## Motivation
     - Elastic(ELK), EFK 스택의 모의 테스트 환경을 빠르게 구축하고 싶다.
-    - ami를 미리 구성해놓아도, ip 설정 등이 매우 번거롭다.
+    - ami를 미리 구성해놓아도, EFK 스택 간 IP 설정 등이 번거롭기 때문에 이를 자동화하고 싶다.
     - Infrastructure as Code (IaC)로 테스트 환경을 기록해두고 싶다.
 
 ## 디렉토리 별 구성 및 설명
