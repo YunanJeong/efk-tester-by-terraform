@@ -8,6 +8,7 @@
 
 ## 디렉토리 별 구성 및 설명
 [efk-by-terraform/](https://github.com/YunanJeong/efk-tester-by-terraform/tree/main/efk-by-terraform)
+[efk-version-terraform/](https://github.com/YunanJeong/efk-tester-by-terraform/tree/main/efk-version-terraform)
 
 ## 요구사항
 - awscli가 설치 및 세팅되어있어야 함.
