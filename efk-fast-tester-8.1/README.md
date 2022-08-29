@@ -1,4 +1,4 @@
-## efk-by-terraform
+## efk-fast-tester
 - 로컬 PC의 filebeat로 임의로그를 발생시켜 테스트하는 것을 가정한다.
 - 설치과정부터 진행하면 인스턴스 셋업에 시간이 많이 소요되므로 ami는 미리 만들어둔 것을 사용한다.
 

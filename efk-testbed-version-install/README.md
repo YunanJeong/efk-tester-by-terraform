@@ -1,4 +1,4 @@
-## efk-by-terraform
+## efk-testbed-version-install
 - 로컬 PC의 filebeat로 임의로그를 발생시켜 테스트하는 것을 가정한다.
 - EFK스택을 설치부터 실행까지한다. 새 버전을 적용 및 테스트하는 데 활용한다.
 - efk_config 내 설정 파일들은 elastic 8.1~8.4 까지 무리 없이 적용가능하다.
